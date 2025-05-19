@@ -15,7 +15,7 @@ export const HeroSection = () => {
           </h1>
 
           <p 
-            className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-in-delay-3"
+            className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-in-delay-3 font-serif"
           >
             I'm a software engineer with a passion for creating excellent web experiences. Though currently specializing in front-end web development, I build interfaces which are both functional and beautiful but when there's need for a bit of back-end, I'm more than capable enough to deliver.
           </p>
