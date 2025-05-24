@@ -14,7 +14,7 @@ export const AboutSection = () => {
             <h3 className="text-2xl font-semibold">Passionate Software Engineer & Tech Enthusiast</h3>
 
             <p className="text-muted-foreground">
-              Although some may see me as upcoming, I'm pretty versatile and specialize in delivering an excellent result in whatever project I'm working on, using modern tech.
+              Though upcoming, I'm pretty versatile and specialize in delivering an excellent result in whatever project I'm working on, using modern tech.
             </p>
 
             <p className="text-muted-foreground">
