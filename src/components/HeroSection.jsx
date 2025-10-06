@@ -8,7 +8,7 @@ export const HeroSection = () => {
     >
       <div className="container max-w-4xl mx-auto text-center z-10">
         <div className="space-y-6 flex flex-col items-center">
-          <div className="size-50 opacity-0 animate-fade-in">
+          <div className="size-30 sm:size-50 opacity-0 animate-fade-in">
             <img src="/king-karta.png" alt="Karta Logo" className="size-fit rounded-3xl" />
           </div>
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
