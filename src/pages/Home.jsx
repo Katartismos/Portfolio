@@ -1,9 +1,10 @@
-import { ThemeToggle } from '../components/ThemeToggle';
-import { StarBackground } from '../components/StarBackground';
-import { Navbar } from '../components/Navbar';
-import { HeroSection } from '../components/HeroSection';
-import { AboutSection } from '../components/AboutSection';
-import { SkillsSection } from '../components/SkillsSection';
+import { ThemeToggle } from '../components/ThemeToggle'
+import { StarBackground } from '../components/StarBackground'
+import { Navbar } from '../components/Navbar'
+import { HeroSection } from '../components/HeroSection'
+import { AboutSection } from '../components/AboutSection'
+import { SkillsSection } from '../components/SkillsSection'
+import { ProjectsSection } from '../components/ProjectsSection'
 
 export const Home = () => {
 
@@ -20,6 +21,7 @@ export const Home = () => {
         <HeroSection />
         <AboutSection />
         <SkillsSection />
+        <ProjectsSection />
       </main>
       {/** Footer */}
     </div>
