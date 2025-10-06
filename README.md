@@ -1,14 +1,14 @@
 
 # Katartismos Portfolio
 
-This is a modern, animated, and responsive developer portfolio website built with **React** and **Vite**. It showcases the skills, projects, and background of Amara Owanta-Emenike (aka Katartismos), a passionate software engineer focused on delivering excellent web experiences.
+My modern, animated and responsive portfolio website built using **React** with **Vite**. It shows the skills I offer as a software engineer, projects I have built and the website itself is a demonstration of what I can do.
 
 ## ✨ Features
 
 - **Beautiful Hero Section** with animated introduction and call-to-action
-- **About Me** section highlighting background and philosophy
+- **About Me** section highlighting my passion
 - **Skills** section with categorized, icon-based skill display
-- **Projects** section (expandable) to showcase your work
+- **Projects** section to showcase my work
 - **Animated Star Background** for a cosmic, modern feel
 - **Theme Toggle** (light/dark mode)
 - **Responsive Design** for all devices
