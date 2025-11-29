@@ -6,7 +6,11 @@ const projects = [
     title: 'Amazon Clone',
     description: 'An intuitive amazon clone built using React with TypeScript, complete with smooth mobile responsiveness',
     image: '/projects/amazon.png',
-    tags: ['React', 'Tailwind', 'TypeScript'],
+    tags: [
+      { name: 'React', link: 'https://react.dev'},
+      { name: 'Tailwind', link: 'https://tailwindcss.com'},
+      { name: 'TypeScript', link: 'https://www.typescriptlang.org'},
+    ],
     demo: 'https://amazon-clone-by-karta.vercel.app',
     github: 'https://github.com/Katartismos/amazon-clone'
   },
@@ -15,7 +19,11 @@ const projects = [
     title: 'Dev Events Platform',
     description: 'The Hub for Every important and upcoming Dev Event you must not miss',
     image: '/projects/devEvents.png',
-    tags: ['Next.js', 'TypeScript', 'MongoDB'],
+    tags: [
+      { name: 'Next.js', link: 'https://nextjs.org'},
+      { name: 'TypeScript', link: 'https://www.typescriptlang.org'},
+      { name: 'MongoDB', link: 'https://www.mongodb.com'},
+    ],
     demo: 'https://dev-events-lime.vercel.app',
     github: 'https://github.com/Katartismos/devEvents-platform'
   },
@@ -24,7 +32,11 @@ const projects = [
     title: 'Mojito Cocktails Landing Page',
     description: 'An intuitive amazon clone built using React with TypeScript, complete with smooth mobile responsiveness',
     image: '/projects/mojito.png',
-    tags: ['GSAP', 'Tailwind', 'React'],
+    tags: [
+      { name: 'GSAP', link: 'https://gsap.com'},
+      { name: 'Tailwind', link: 'https://tailwindcss.com'},
+      { name: 'React', link: 'https://react.dev'},
+    ],
     demo: 'https://mojito-cocktails-xero.vercel.app',
     github: 'https://github.com/mojito-cocktails-landing-page'
   }
@@ -50,7 +62,11 @@ export const ProjectsSection = () => {
               <div className="p-6">
                 <div className="flex flex-wrap justify-center gap-4 mb-4">
                   {project.tags.map(tag => (
-                    <span className="px-2 py-1 text-sm font-medium rounded-full bg-primary/5 text-secondary-foreground">{tag}</span>
+                    <a 
+                      href={tag.link}
+                      target="_blank"
+                      className="px-2 py-1 text-sm font-medium rounded-full bg-primary/5 text-secondary-foreground"
+                    >{tag.name}</a>
                   ))}
                 </div>
 
