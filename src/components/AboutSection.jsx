@@ -18,13 +18,13 @@ export const AboutSection = () => {
             </p>
 
             <p className="text-muted-foreground">
-              I'm passionate about problem solving and constantly evolving with new techniques to remain ever valueable in the ever-changing tech lansdcape.
+              I'm passionate about problem solving and constantly evolving with new techniques to remain valueable in the ever-changing tech lansdcape.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
               <a href="#contact" className="cosmic-button"> Get In Touch</a>
 
-              <a href="" className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300">Download CV</a>
+              <a href="/cv/Amara-Emenike-Frontend-Engineer-CV.pdf" download="Amara-Emenike-Frontend-Engineer-CV.pdf" className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300">Download CV</a>
             </div>
           </div>
 

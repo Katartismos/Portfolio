@@ -17,7 +17,7 @@ My modern, animated and responsive portfolio website built using **React** with 
 
 ## 🚀 Demo
 
-> [Live Demo Coming Soon!]
+> [https://katartismos.vercel.app](https://katartismos.vercel.app)
 
 ## 🛠️ Tech Stack
 

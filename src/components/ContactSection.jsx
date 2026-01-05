@@ -69,7 +69,7 @@ const ContactSection = () => {
             <div>
               <h3 className="text-2xl font-semibold mb-6">Connect with me</h3>
               <div className="flex flex-col ml-35">
-                <a href="https://www.linkedin.com/in/amara-emenike-ab29233a3" className="my-1" target="_blank">
+                <a href="https://www.linkedin.com/in/amara-emenike" className="my-1" target="_blank">
                   <div className="flex items-center space-x-4 p-3 rounded-full bg-primary/8 w-40 cosmic-button text-primary">
                     <IoLogoLinkedin className="h-8 w-8"/>
                     <p>Linkedin</p>
