@@ -38,7 +38,7 @@ const projects = [
       { name: 'React', link: 'https://react.dev'},
     ],
     demo: 'https://mojito-cocktails-xero.vercel.app',
-    github: 'https://github.com/mojito-cocktails-landing-page'
+    github: 'https://github.com/Katartismos/mojito-cocktails-landing-page'
   }
 ];
 
