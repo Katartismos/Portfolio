@@ -27,11 +27,11 @@ const ContactSection = () => {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="flex flex-col">
-            <div>
+          <div className="flex flex-col items-center md:items-start">
+            <div className="text-center md:text-left">
               <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
-              <div className="space-y-6 ml-30">
-                <div className="flex items-center space-x-4">
+              <div className="space-y-6 flex flex-col items-center md:items-start">
+                <div className="flex items-center space-x-4 w-full max-w-xs">
                   <div className="p-3 rounded-full bg-primary/10">
                     <Mail className="h-6 w-6 text-primary" />
                   </div>
@@ -41,17 +41,17 @@ const ContactSection = () => {
                     </a>
                   </div>
                 </div>
-                <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-4 w-full max-w-xs">
                   <div className="p-3 rounded-full bg-primary/10">
                     <Phone className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <a href="tel:+2349122105875" className="text-muted-foreground hover:text-primary transition-colors">
-                      +234 912 210 5875
+                    <a href="tel:+2348142699842" className="text-muted-foreground hover:text-primary transition-colors">
+                      +234 814 269 9842
                     </a>
                   </div>
                 </div>
-                <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-4 w-full max-w-xs">
                   <div className="p-3 rounded-full bg-primary/10">
                     <MapPin className="h-6 w-6 text-primary" />
                   </div>
@@ -65,10 +65,10 @@ const ContactSection = () => {
             </div>
           </div>
 
-          <div className="flex flex-col">
-            <div>
+          <div className="flex flex-col items-center md:items-start">
+            <div className="text-center md:text-left">
               <h3 className="text-2xl font-semibold mb-6">Connect with me</h3>
-              <div className="flex flex-col ml-35">
+              <div className="flex flex-col items-center md:items-start space-y-2">
                 <a href="https://www.linkedin.com/in/amara-emenike" className="my-1" target="_blank">
                   <div className="flex items-center space-x-4 p-3 rounded-full bg-primary/8 w-40 cosmic-button text-primary">
                     <IoLogoLinkedin className="h-8 w-8"/>
