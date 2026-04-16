@@ -2,16 +2,25 @@ import { Mail, MapPin, Phone, Send } from "lucide-react"
 import { FaInstagram } from "react-icons/fa"
 import { FaSquareXTwitter } from "react-icons/fa6"
 import { IoLogoLinkedin } from "react-icons/io5";
-import { cn } from "@/lib/utils";
+import { useState } from "react";
 
 const ContactSection = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault()
-
-    setTimeout(() => {
-      
-    }, 1500)
+    console.log("Form submitted:", formData);
+    // Add logic to send message if needed
+    alert("Message sent! (Demo)");
+    setFormData({ name: "", email: "", message: "" });
   };
 
   return (
@@ -23,72 +32,122 @@ const ContactSection = () => {
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center"> Get In <span className="text-primary">Touch</span></h2>
 
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Thinking of collaborating with me? Feel free to reach out! I'm always open to discussing new opportunities
+          Have a project in mind or want to collaborate? Feel free to reach out. I'm always open to discussing new opportunities.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="flex flex-col items-center md:items-start">
-            <div className="text-center md:text-left">
-              <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
-              <div className="space-y-6 flex flex-col items-center md:items-start">
-                <div className="flex items-center space-x-4 w-full max-w-xs">
-                  <div className="p-3 rounded-full bg-primary/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+          {/* Left Column: Contact Info & Socials */}
+          <div className="space-y-15">
+            <div>
+              <h3 className="text-2xl font-semibold mb-8 text-center">Contact Information</h3>
+              <div className="space-y-8 flex flex-col items-center md:items-start md:pl-7.5">
+                {/* Email */}
+                <div className="flex items-center space-x-4 w-full max-w-sm">
+                  <div className="p-3 rounded-2xl bg-primary/10 border border-primary/20">
                     <Mail className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <a href="mailto:amaraemenike9@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
+                    <p className="text-md font-semibold text-muted-foreground mb-0.5">Email</p>
+                    <a href="mailto:amaraemenike9@gmail.com" className="font-medium hover:text-primary transition-colors">
                       amaraemenike9@gmail.com
                     </a>
                   </div>
                 </div>
-                <div className="flex items-center space-x-4 w-full max-w-xs">
-                  <div className="p-3 rounded-full bg-primary/10">
+
+                {/* Phone */}
+                <div className="flex items-center space-x-4 w-full max-w-sm">
+                  <div className="p-3 rounded-2xl bg-primary/10 border border-primary/20">
                     <Phone className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <a href="tel:+2348142699842" className="text-muted-foreground hover:text-primary transition-colors">
+                    <p className="text-md font-semibold text-muted-foreground mb-0.5">Phone</p>
+                    <a href="tel:+2348142699842" className="font-medium hover:text-primary transition-colors">
                       +234 814 269 9842
                     </a>
                   </div>
                 </div>
-                <div className="flex items-center space-x-4 w-full max-w-xs">
-                  <div className="p-3 rounded-full bg-primary/10">
+
+                {/* Location */}
+                <div className="flex items-center space-x-4 w-full max-w-sm">
+                  <div className="p-3 rounded-2xl bg-primary/10 border border-primary/20">
                     <MapPin className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <a className="text-muted-foreground hover:text-primary transition-colors">
-                      Lagos, Nigeria
-                    </a>
+                    <p className="text-md font-semibold text-muted-foreground mb-0.5">Location</p>
+                    <p className="font-medium">Lagos, Nigeria</p>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div className="flex flex-col items-center md:items-start">
-            <div className="text-center md:text-left">
-              <h3 className="text-2xl font-semibold mb-6">Connect with me</h3>
-              <div className="flex flex-col items-center md:items-start space-y-2">
-                <a href="https://www.linkedin.com/in/amara-emenike" className="my-1" target="_blank">
-                  <div className="flex items-center space-x-4 p-3 rounded-full bg-primary/8 w-40 cosmic-button text-primary">
-                    <IoLogoLinkedin className="h-8 w-8"/>
-                    <p>Linkedin</p>
-                  </div>
+            {/* Socials */}
+            <div className="text-center">
+              <h3 className="text-xl font-semibold mb-6">Connect With Me</h3>
+              <div className="flex justify-center items-center space-x-6">
+                <a href="https://www.linkedin.com/in/amara-emenike" target="_blank" className="hover:text-primary transition-all hover:scale-115 duration-100">
+                  <IoLogoLinkedin className="h-10 w-10"/>
                 </a>
-                <a href="https://www.instagram.com/katar_tismos" className="my-1" target="_blank">
-                  <div className="flex items-center space-x-4 p-3 rounded-full bg-primary/8 w-40 cosmic-button text-primary">
-                    <FaInstagram className="h-8 w-8"/>
-                    <p>Instagram</p>
-                  </div>
+                <a href="https://x.com/Amara_Emenike" target="_blank" className="hover:text-primary transition-all hover:scale-115 duration-100">
+                  <FaSquareXTwitter className="h-10 w-10"/>
                 </a>
-                <a href="https://x.com/Amara_Emenike" className="my-1" target="_blank">
-                  <div className="flex items-center space-x-4 p-3 rounded-full bg-primary/8 w-40 cosmic-button text-primary">
-                    <FaSquareXTwitter className="h-8 w-8"/>
-                    <p>Twitter (X)</p>
-                  </div>
+                <a href="https://www.instagram.com/katar_tismos" target="_blank" className="hover:text-primary transition-all hover:scale-115 duration-100">
+                  <FaInstagram className="h-10 w-10"/>
                 </a>
               </div>
             </div>
+          </div>
+
+          {/* Right Column: Send a Message Form */}
+          <div className="gradient-border p-8 md:p-10 bg-card/50 backdrop-blur-sm">
+            <h3 className="text-2xl font-semibold mb-8 text-center">Send a Message</h3>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium mb-2 text-muted-foreground">Your Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  placeholder="Enter your name"
+                  className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                />
+              </div>
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium mb-2 text-muted-foreground">Your Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  placeholder="Enter your email"
+                  className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                />
+              </div>
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium mb-2 text-muted-foreground">Your Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows="4"
+                  placeholder="Hello, I'd like to talk about..."
+                  className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                className="w-full cosmic-button flex justify-center items-center space-x-2 py-4"
+              >
+                <span>Send Message</span>
+                <Send className="h-5 w-5" />
+              </button>
+            </form>
           </div>
         </div>
       </div>
