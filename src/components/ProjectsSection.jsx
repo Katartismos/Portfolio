@@ -1,4 +1,5 @@
 import { ArrowRight, ExternalLink, Github } from "lucide-react";
+import { FaGithub } from "react-icons/fa"
 
 const projects = [
   {
@@ -29,16 +30,16 @@ const projects = [
   },
   {
     id: 3,
-    title: 'Mojito Cocktails Landing Page',
-    description: 'An intuitive amazon clone built using React with TypeScript, complete with smooth mobile responsiveness',
-    image: '/projects/mojito.png',
+    title: 'K-Blog App',
+    description: 'Stay amazed and relaxed with stunning visuals as you read your favourite articles or even publish a few yourself.',
+    image: '/projects/kblog.png',
     tags: [
+      { name: 'Next.js', link: 'https://nextjs.org'},
       { name: 'GSAP', link: 'https://gsap.com'},
-      { name: 'Tailwind', link: 'https://tailwindcss.com'},
-      { name: 'React', link: 'https://react.dev'},
+      { name: 'NextAuth', link: 'https://next-auth.js.org'},
     ],
-    demo: 'https://mojito-cocktails-xero.vercel.app',
-    github: 'https://github.com/Katartismos/mojito-cocktails-landing-page'
+    demo: 'https://k-blog-app.vercel.app',
+    github: 'https://github.com/Katartismos/K-Blog-app'
   }
 ];
 
@@ -54,12 +55,13 @@ export const ProjectsSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, key) => (
+            /** Project Card */
             <div key={key} className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover cursor-pointer">
               <div className="h-60 overflow-hidden">
                 <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
               </div>
 
-              <div className="p-6">
+              <div className="p-5">
                 <div className="flex flex-wrap justify-center gap-4 mb-4">
                   {project.tags.map(tag => (
                     <a 
@@ -88,7 +90,7 @@ export const ProjectsSection = () => {
                       target="_blank"
                       className="text-foreground/80 hover:text-primary transition-colors duration-300 mx-2 my-2"
                     >
-                      <Github size={20} />
+                      <FaGithub size={20} />
                     </a>
                   </div>
                 </div>

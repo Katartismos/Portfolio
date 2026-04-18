@@ -132,7 +132,7 @@ const ContactSection = () => {
           </div>
 
           {/* Right Column: Send a Message Form */}
-          <div className="gradient-border p-8 md:p-10 bg-card/50 backdrop-blur-sm">
+          <div className="gradient-border p-8 md:p-10 bg-card/50 backdrop-blur-sm shadow-sm">
             <h3 className="text-2xl font-semibold mb-8 text-center">Send a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>

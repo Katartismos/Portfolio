@@ -7,6 +7,7 @@ import { SkillsSection } from '../components/SkillsSection'
 import { ProjectsSection } from '../components/ProjectsSection'
 import ContactSection from '../components/ContactSection'
 import Footer from '../components/Footer'
+import ScrollToTopButton from '../components/ScrollToTopButton'
 
 export const Home = () => {
 
@@ -25,6 +26,7 @@ export const Home = () => {
         <SkillsSection />
         <ProjectsSection />
         <ContactSection />
+        <ScrollToTopButton />
       </main>
       {/** Footer */}
       <Footer />
