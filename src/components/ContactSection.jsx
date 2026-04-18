@@ -1,8 +1,9 @@
-import { Mail, MapPin, Phone, Send } from "lucide-react"
+import { Mail, MapPin, Phone, Send, Loader2 } from "lucide-react"
 import { FaInstagram } from "react-icons/fa"
 import { FaSquareXTwitter } from "react-icons/fa6"
 import { IoLogoLinkedin } from "react-icons/io5";
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -10,17 +11,50 @@ const ContactSection = () => {
     email: "",
     message: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+  const [submitMessage, setSubmitMessage] = useState("");
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log("Form submitted:", formData);
-    // Add logic to send message if needed
-    alert("Message sent! (Demo)");
-    setFormData({ name: "", email: "", message: "" });
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+    setSubmitMessage("");
+
+    const templateParams = {
+      title: "Portfolio Contact Form",
+      name: formData.name,
+      email: formData.email,
+      message: formData.message,
+      time: new Date().toLocaleString()
+    };
+
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        templateParams,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+      
+      setSubmitStatus("success");
+      setSubmitMessage("Message sent successfully!");
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      setSubmitStatus("error");
+      setSubmitMessage("Failed to send message. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+      setTimeout(() => {
+        setSubmitStatus(null);
+        setSubmitMessage("");
+      }, 5000);
+    }
   };
 
   return (
@@ -140,12 +174,22 @@ const ContactSection = () => {
                   className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none"
                 ></textarea>
               </div>
+              {submitStatus && (
+                <div className={`p-4 rounded-lg text-sm font-medium ${submitStatus === 'success' ? 'bg-green-500/10 border border-green-500/20 text-green-500' : 'bg-red-500/10 border border-red-500/20 text-red-500'}`}>
+                  {submitMessage}
+                </div>
+              )}
               <button
                 type="submit"
-                className="w-full cosmic-button flex justify-center items-center space-x-2 py-4"
+                disabled={isSubmitting}
+                className="w-full cosmic-button cursor-pointer flex justify-center items-center space-x-2 py-4 disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                <span>Send Message</span>
-                <Send className="h-5 w-5" />
+                <span>{isSubmitting ? "Sending" : "Send Message"}</span>
+                {isSubmitting ? (
+                  <Loader2 className="h-5 w-5 animate-spin" />
+                ) : (
+                  <Send className="h-5 w-5" />
+                )}
               </button>
             </form>
           </div>
