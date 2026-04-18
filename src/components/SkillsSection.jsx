@@ -4,8 +4,9 @@ import { DiJavascript1, DiReact, DiVisualstudio } from 'react-icons/di';
 import { SiNextdotjs, SiTypescript, SiTailwindcss, SiMongodb, SiExpress, SiNodedotjs } from 'react-icons/si';
 import { VscVscode, VscGithub } from 'react-icons/vsc';
 import { CiGlobe } from 'react-icons/ci';
+import { Antigravity } from '@lobehub/icons';
 
-const iconStyles = "w-12 h-12 text-primary";
+const iconStyles = "w-10 h-10 text-primary";
 
 const skills = [
   // Frontend
@@ -24,7 +25,7 @@ const skills = [
   // Tools
   { name: "VS Code", icon: <VscVscode className={iconStyles}/>, category: "tools" },
   { name: "Git/GitHub", icon: <VscGithub className={iconStyles}/>, category: "tools" },
-  { name: "MS Visual Studio", icon: <DiVisualstudio className={iconStyles}/>, category: "tools" },
+  { name: "Google Antigravity", icon: <Antigravity className={iconStyles}/>, category: "tools" },
 ];
 
 const categories = ['all', 'frontend', 'backend', 'tools'];
