@@ -10,7 +10,7 @@ export const AboutSection = () => {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 items-center">
-          <div className="space-y-6">
+          <div className="space-y-6 space-x-10">
             <h3 className="text-2xl font-semibold">Passionate Software Engineer & Tech Enthusiast</h3>
 
             <p className="text-muted-foreground">
